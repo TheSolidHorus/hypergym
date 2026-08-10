@@ -5,8 +5,8 @@ import { createClient } from '@supabase/supabase-js'
 // Vai su: Project Settings → API
 // Copia questi valori:
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://lrnannuvewaamslqacmh.supabase.co'
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxybmFubnV2ZXdhYW1zbHFhY21oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMTc5MDQsImV4cCI6MjEwMTg5MzkwNH0.YjNmkBhY2Y4m_4w5E-Jzn-4tbhFFh4MYRYHcBF9knl8'
 
 // Custom Storage Adapter implementation for robust mobile support
 const SafeStorage = {
