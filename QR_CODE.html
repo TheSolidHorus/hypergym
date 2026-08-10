@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUMP App QR Code</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #09090b;
+            /* Zinc 950 */
+            color: #ffffff;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: #18181b;
+            /* Zinc 900 */
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #27272a;
+            /* Zinc 800 */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #bef264;
+            /* Primary lime color */
+            margin: 0 0 20px 0;
+            font-weight: 900;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        img {
+            display: block;
+            border: 8px solid white;
+            border-radius: 12px;
+            margin: 0 auto;
+        }
+
+        p {
+            color: #a1a1aa;
+            /* Zinc 400 */
+            margin-top: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .link {
+            margin-top: 10px;
+            color: #bef264;
+            text-decoration: none;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>PUMP APP</h1>
+        <!-- Genera QR Code dinamico puntando all'URL di Vercel -->
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=10&color=000000&bgcolor=ffffff&data=https://pump-app-sand.vercel.app"
+            alt="QR Code PUMP App">
+        <p>Inquadra per entrare</p>
+        <a href="https://pump-app-sand.vercel.app" class="link">pump-app-sand.vercel.app</a>
+    </div>
+</body>
+
+</html>

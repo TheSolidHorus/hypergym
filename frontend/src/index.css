@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root {
+    --c-primary: #0f172a;
+    --c-primary-foreground: #ffffff;
+    --c-white: #ffffff;
+    --c-bg: #f8fafc;
+    --c-card: #ffffff;
+    --c-slate-50: #f8fafc;
+    --c-slate-100: #f1f5f9;
+    --c-slate-200: #e2e8f0;
+    --c-slate-300: #cbd5e1;
+    --c-slate-400: #94a3b8;
+    --c-slate-500: #64748b;
+    --c-slate-600: #475569;
+    --c-slate-700: #334155;
+    --c-slate-800: #1e293b;
+    --c-slate-900: #0f172a;
+    --c-border: #e2e8f0;
+    --c-foreground: #0f172a;
+    --c-muted: #f1f5f9;
+    --c-muted-foreground: #64748b;
+    --c-accent: #f1f5f9;
+    --c-accent-foreground: #0f172a;
+  }
+
+  html.dark, :root.dark {
+    --c-primary: #ffffff;
+    --c-primary-foreground: #0b0e14;
+    --c-white: #161c24;       /* Surface card titanio scuro */
+    --c-bg: #0b0e14;          /* Background stealth profondo matching logo */
+    --c-card: #161c24;
+    --c-slate-50: #161c24;
+    --c-slate-100: #232b38;
+    --c-slate-200: #334155;
+    --c-slate-300: #475569;
+    --c-slate-400: #94a3b8;   /* Titanium silver */
+    --c-slate-500: #cbd5e1;
+    --c-slate-600: #e2e8f0;
+    --c-slate-700: #f1f5f9;
+    --c-slate-800: #f8fafc;
+    --c-slate-900: #ffffff;   /* Testo puro */
+    --c-border: #232b38;
+    --c-foreground: #f8fafc;
+    --c-muted: #1e2633;
+    --c-muted-foreground: #94a3b8;
+    --c-accent: #232b38;
+    --c-accent-foreground: #ffffff;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--c-bg);
+    color: var(--c-foreground);
+    @apply overscroll-none select-none font-display antialiased transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    touch-action: pan-x pan-y;
+  }
+
+  input[type="number"] {
+    appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+/* Glass Card utility */
+.glass-card {
+  background: rgba(22, 28, 36, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.titanium-gradient {
+  background: linear-gradient(135deg, #2b2d31 0%, #161c24 100%);
+}
+
+.titanium-badge {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Material Symbols override */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utility: no scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

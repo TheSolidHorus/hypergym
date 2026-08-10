@@ -1,0 +1,42 @@
+# === SICUREZZA: non committare mai questi file ===
+
+# Variabili d'ambiente e segreti
+.env
+.env.local
+.env.production
+.env.*.local
+backend/.env
+frontend/.env
+
+# Database locale
+*.db
+*.sqlite
+backend/pump.db
+
+# Binari grandi
+supabase.exe
+
+# Node modules
+node_modules/
+
+# Build artifacts
+dist/
+build/
+frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Logs
+*.log
+npm-debug.log*

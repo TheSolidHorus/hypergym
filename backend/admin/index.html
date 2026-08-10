@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUMP Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#bef264',
+                        dark: '#0a0a0a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: #0a0a0a;
+        }
+
+        .glow {
+            box-shadow: 0 0 30px rgba(190, 242, 100, 0.15);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-white font-sans">
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 w-full max-w-md">
+            <div class="text-center mb-8">
+                <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4 glow">
+                    <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-black uppercase italic">PUMP Admin</h1>
+                <p class="text-zinc-500 text-sm mt-1">Pannello di controllo</p>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="text-xs font-bold text-zinc-500 uppercase tracking-wider">Password Admin</label>
+                    <div class="relative mt-2">
+                        <input type="password" id="admin-password" placeholder="••••••••"
+                            class="w-full bg-zinc-800 border border-zinc-700 rounded-lg p-4 pr-14 text-white focus:outline-none focus:border-primary">
+                        <button type="button" onclick="togglePassword()" id="toggle-pw-btn"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-zinc-500 hover:text-primary transition-colors">
+                            <svg id="eye-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <svg id="eye-off-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button onclick="login()"
+                    class="w-full py-4 bg-primary text-black font-bold uppercase tracking-wider rounded-lg hover:scale-105 active:scale-95 transition-transform">
+                    Accedi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden">
+        <!-- Header -->
+        <header class="bg-zinc-900/80 backdrop-blur border-b border-zinc-800 sticky top-0 z-10">
+            <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
+                        <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="font-black uppercase italic text-lg">PUMP Admin</h1>
+                        <p class="text-xs text-zinc-500">Gestione Utenti & Certificati</p>
+                    </div>
+                </div>
+                <button onclick="logout()"
+                    class="text-zinc-500 hover:text-white text-sm font-bold uppercase">Esci</button>
+            </div>
+        </header>
+
+        <main class="max-w-7xl mx-auto px-4 py-8">
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5 glow">
+                    <p class="text-xs text-zinc-500 font-bold uppercase mb-1">Utenti Totali</p>
+                    <p id="stat-total" class="text-3xl font-black text-white">-</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+                    <p class="text-xs text-zinc-500 font-bold uppercase mb-1">Con Certificato</p>
+                    <p id="stat-with-cert" class="text-3xl font-black text-primary">-</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+                    <p class="text-xs text-zinc-500 font-bold uppercase mb-1">Senza Certificato</p>
+                    <p id="stat-without-cert" class="text-3xl font-black text-red-500">-</p>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
+                    <p class="text-xs text-zinc-500 font-bold uppercase mb-1">In Scadenza</p>
+                    <p id="stat-expiring" class="text-3xl font-black text-amber-500">-</p>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+                <button onclick="loadUsers('all')"
+                    class="filter-btn active px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm font-bold whitespace-nowrap hover:border-primary transition-colors"
+                    data-filter="all">
+                    Tutti
+                </button>
+                <button onclick="loadUsers('with_cert')"
+                    class="filter-btn px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm font-bold whitespace-nowrap hover:border-primary transition-colors"
+                    data-filter="with_cert">
+                    ✅ Con Certificato
+                </button>
+                <button onclick="loadUsers('without_cert')"
+                    class="filter-btn px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm font-bold whitespace-nowrap hover:border-primary transition-colors"
+                    data-filter="without_cert">
+                    ❌ Senza Certificato
+                </button>
+                <button onclick="loadUsers('expiring')"
+                    class="filter-btn px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg text-sm font-bold whitespace-nowrap hover:border-primary transition-colors"
+                    data-filter="expiring">
+                    ⚠️ In Scadenza
+                </button>
+            </div>
+
+            <!-- Users Table -->
+            <div class="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-zinc-800/50 text-xs text-zinc-500 uppercase">
+                            <tr>
+                                <th class="text-left p-4">Utente</th>
+                                <th class="text-left p-4">Contatti</th>
+                                <th class="text-center p-4">Certificato</th>
+                                <th class="text-center p-4">Scadenza</th>
+                                <th class="text-center p-4">Workout</th>
+                                <th class="text-center p-4">Ultimo Sync</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table" class="divide-y divide-zinc-800">
+                            <tr>
+                                <td colspan="6" class="p-8 text-center text-zinc-600">Caricamento...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const API_BASE = window.location.origin;
+        let adminPassword = '';
+
+        function togglePassword() {
+            const input = document.getElementById('admin-password');
+            const eyeIcon = document.getElementById('eye-icon');
+            const eyeOffIcon = document.getElementById('eye-off-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeIcon.classList.add('hidden');
+                eyeOffIcon.classList.remove('hidden');
+            } else {
+                input.type = 'password';
+                eyeIcon.classList.remove('hidden');
+                eyeOffIcon.classList.add('hidden');
+            }
+        }
+
+        function login() {
+            adminPassword = document.getElementById('admin-password').value;
+            if (!adminPassword) return alert('Inserisci la password');
+
+            // HIGH-03 FIX: invia il token nell'header, mai in URL
+            fetch(`${API_BASE}/admin/stats`, {
+                headers: { 'X-Admin-Token': adminPassword }
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error('Password errata');
+                    return res.json();
+                })
+                .then(() => {
+                    document.getElementById('login-screen').classList.add('hidden');
+                    document.getElementById('dashboard').classList.remove('hidden');
+                    loadStats();
+                    loadUsers('all');
+                })
+                .catch(err => alert(err.message));
+        }
+
+        function logout() {
+            adminPassword = '';
+            document.getElementById('login-screen').classList.remove('hidden');
+            document.getElementById('dashboard').classList.add('hidden');
+        }
+
+        function loadStats() {
+            fetch(`${API_BASE}/admin/stats`, {
+                headers: { 'X-Admin-Token': adminPassword }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('stat-total').textContent = data.total_users;
+                    document.getElementById('stat-with-cert').textContent = data.users_with_certificate;
+                    document.getElementById('stat-without-cert').textContent = data.users_without_certificate;
+                    document.getElementById('stat-expiring').textContent = data.certificates_expiring_soon;
+                });
+        }
+
+        function loadUsers(filter) {
+            // Update active filter button
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('border-primary', 'text-primary');
+                if (btn.dataset.filter === filter) {
+                    btn.classList.add('border-primary', 'text-primary');
+                }
+            });
+
+            fetch(`${API_BASE}/admin/users?filter=${filter}`, {
+                headers: { 'X-Admin-Token': adminPassword }
+            })
+                .then(res => res.json())
+                .then(users => {
+                    const tbody = document.getElementById('users-table');
+
+                    if (users.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="6" class="p-8 text-center text-zinc-600">Nessun utente trovato</td></tr>';
+                        return;
+                    }
+
+                    tbody.innerHTML = users.map(user => `
+                        <tr class="hover:bg-zinc-800/50 transition-colors">
+                            <td class="p-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center font-bold text-sm">
+                                        ${user.name.substring(0, 2).toUpperCase()}
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-white">${user.name}</p>
+                                        <p class="text-xs text-zinc-600">${user.id.substring(0, 8)}...</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-4">
+                                <p class="text-sm text-zinc-400">${user.email || '-'}</p>
+                                <p class="text-xs text-zinc-600">${user.phone || ''}</p>
+                            </td>
+                            <td class="p-4 text-center">
+                                ${user.certificate_uploaded
+                            ? '<span class="inline-flex items-center gap-1 px-2 py-1 bg-primary/20 text-primary rounded-full text-xs font-bold">✓ Caricato</span>'
+                            : '<span class="inline-flex items-center gap-1 px-2 py-1 bg-red-500/20 text-red-500 rounded-full text-xs font-bold">✗ Mancante</span>'
+                        }
+                            </td>
+                            <td class="p-4 text-center text-sm">
+                                ${user.certificate_expires_at
+                            ? formatDate(user.certificate_expires_at)
+                            : '<span class="text-zinc-600">-</span>'
+                        }
+                            </td>
+                            <td class="p-4 text-center">
+                                <span class="font-bold text-white">${user.workouts_completed}</span>
+                            </td>
+                            <td class="p-4 text-center text-xs text-zinc-500">
+                                ${user.last_sync_at ? formatDate(user.last_sync_at) : 'Mai'}
+                            </td>
+                        </tr>
+                    `).join('');
+                });
+        }
+
+        function formatDate(isoString) {
+            const date = new Date(isoString);
+            return date.toLocaleDateString('it-IT', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+
+        // Auto-refresh ogni 30 secondi
+        setInterval(() => {
+            if (adminPassword) {
+                loadStats();
+            }
+        }, 30000);
+    </script>
+</body>
+
+</html>

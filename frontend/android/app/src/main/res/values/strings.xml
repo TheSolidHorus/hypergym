@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MySpotterPUMP</string>
+    <string name="title_activity_main">MySpotterPUMP</string>
+    <string name="package_name">com.myspotter.pump</string>
+    <string name="custom_url_scheme">com.myspotter.pump</string>
+</resources>

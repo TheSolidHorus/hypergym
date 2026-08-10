@@ -1,0 +1,36 @@
+# === SICUREZZA: non committare mai questi file ===
+
+# Variabili d'ambiente e segreti
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Database locale (contiene dati utente)
+*.db
+*.sqlite
+*.sqlite3
+pump.db
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Dipendenze
+venv/
+env/
+.venv/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

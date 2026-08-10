@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUMP APP - Production QR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-col: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-style: italic;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: #bef264;
+            /* primary */
+        }
+
+        #qrcode {
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+        }
+
+        p {
+            margin-top: 2rem;
+            color: #71717a;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        a {
+            color: #bef264;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>SCAN ME (PROD)</h1>
+
+    <div id="qrcode"></div>
+
+    <p>
+        PUMP APP - VERSIONE ONLINE (STABILE)<br>
+        <a href="https://pump-app-sand.vercel.app" target="_blank">Apri Link Diretto</a>
+    </p>
+
+    <script>
+        // URL DI PRODUZIONE (VERCEL)
+        const productionUrl = "https://pump-app-sand.vercel.app";
+
+        new QRCode(document.getElementById("qrcode"), {
+            text: productionUrl,
+            width: 256,
+            height: 256,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+
+</body>
+
+</html>

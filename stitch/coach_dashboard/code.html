@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff6a00",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#23170f",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 106, 0, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header Navigation -->
+<header class="flex items-center justify-between p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 border-b border-primary/10">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Coach Anna Profile" class="w-full h-full object-cover" data-alt="Professional female fitness coach portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoau9JQ2rydAfi3hO99WMFyknqadraK-Njkpts0pOmrQ7J0e8iwLOT4EYT0-8gO9AStx7RFDj_lXEMSgfdGHEos3mlKlMHJy6NTIcWRzH5No_mKBZ23mCLRJc9Gqb-PClYOeaIKI4HknzqupuLDYq9ZJ9pthUu28tBqxVpna2CrbG3IovLiQFE6wgVXEPYYgg_DJul7JkKAqMeEAkhFIxvLKm853IHK41zZfyRnx6mdPP2flH4867VzlGuEXt4QhIPCe9K8SZIx-g"/>
+</div>
+<h2 class="text-primary text-xl font-bold tracking-tight">PUMP</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-4 py-6 max-w-lg mx-auto w-full">
+<!-- Hero Section -->
+<div class="mb-8">
+<h1 class="text-4xl font-bold text-slate-900 dark:text-white uppercase leading-tight">CIAO, ANNA</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1 font-medium">Ecco un riepilogo della tua attività</p>
+</div>
+<!-- Dashboard Stats Cards -->
+<div class="grid grid-cols-1 gap-4 mb-10">
+<!-- Card 1: Pending Requests -->
+<div class="glass-card rounded-xl p-5 flex items-center justify-between shadow-sm border-l-4 border-l-primary">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Richieste in attesa</p>
+<h3 class="text-4xl font-bold text-slate-900 dark:text-white">0</h3>
+</div>
+<div class="bg-primary/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary text-3xl">chat</span>
+</div>
+</div>
+<!-- Card 2: Athletes -->
+<div class="glass-card rounded-xl p-5 flex items-center justify-between shadow-sm border-l-4 border-l-primary">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">I tuoi atleti</p>
+<h3 class="text-4xl font-bold text-slate-900 dark:text-white">12</h3>
+</div>
+<div class="bg-primary/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary text-3xl">group</span>
+</div>
+</div>
+<!-- Card 3: Exercises -->
+<div class="glass-card rounded-xl p-5 flex items-center justify-between shadow-sm border-l-4 border-l-primary">
+<div>
+<p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Video Esercizi</p>
+<h3 class="text-4xl font-bold text-slate-900 dark:text-white">45</h3>
+</div>
+<div class="bg-primary/10 p-3 rounded-lg">
+<span class="material-symbols-outlined text-primary text-3xl">play_circle</span>
+</div>
+</div>
+</div>
+<!-- Section: Latest Requests -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Ultime Richieste</h3>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">Vedi tutte</a>
+</div>
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center py-12 px-6 bg-white/40 dark:bg-white/5 rounded-xl border-2 border-dashed border-primary/20">
+<div class="w-24 h-24 mb-4 bg-primary/5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/40 text-5xl">inbox</span>
+</div>
+<p class="text-slate-600 dark:text-slate-400 font-medium">Nessuna nuova richiesta</p>
+<p class="text-slate-400 dark:text-slate-500 text-xs mt-1 text-center">Ti avviseremo quando un nuovo atleta vorrà allenarsi con te.</p>
+</div>
+</section>
+<!-- Quick Action Button (Floating Style) -->
+<div class="mt-8 flex justify-center">
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-full flex items-center gap-2 shadow-lg shadow-primary/30 transition-all active:scale-95">
+<span class="material-symbols-outlined">add</span>
+                NUOVO PROGRAMMA
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 w-full bg-white dark:bg-background-dark border-t border-primary/10 px-6 py-3 pb-6">
+<div class="flex justify-between items-center max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-current">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Atleti</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Programmi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Profilo</span>
+</a>
+</div>
+</nav>
+</body></html>
