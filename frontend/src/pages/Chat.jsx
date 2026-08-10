@@ -55,7 +55,7 @@ export default function Chat() {
 
     if (loading) return (
         <div className="h-screen bg-background flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full animate-spin border-4 border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+            <div className="w-8 h-8 rounded-full animate-spin border-4 border-slate-700" style={{ borderTopColor: '#ffffff' }} />
         </div>
     );
 

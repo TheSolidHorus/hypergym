@@ -12,7 +12,7 @@ export default function AuthGuard({ children }) {
     useEffect(() => {
         const checkAuth = async () => {
             // Pagine pubbliche: nessun controllo necessario
-            const publicPaths = ['/login', '/register', '/forgot-password', '/reset-password', '/verify-email', '/auth/callback', '/gym-code'];
+            const publicPaths = ['/login', '/register', '/forgot-password', '/reset-password', '/verify-email', '/auth/callback', '/gym-code', '/privacy'];
             if (publicPaths.includes(location.pathname)) {
                 setChecking(false);
                 return;
@@ -38,10 +38,10 @@ export default function AuthGuard({ children }) {
         checkAuth();
     }, [location.pathname, navigate, userProfile.emailVerified]);
 
-    // Mostra schermo bianco pulito durante il check (previene flash di contenuto)
+    // Mostra schermo pulito durante il check (previene flash di contenuto)
     if (checking) return (
         <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
-            <div className="w-8 h-8 rounded-full animate-spin border-[3px] border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+            <div className="w-8 h-8 rounded-full animate-spin border-[3px] border-slate-700" style={{ borderTopColor: '#ffffff' }} />
         </div>
     );
 

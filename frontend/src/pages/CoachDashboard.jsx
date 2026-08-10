@@ -332,7 +332,7 @@ export default function CoachDashboard() {
     if (loading) {
         return (
             <div className="flex items-center justify-center h-screen bg-background">
-                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-700" style={{ borderTopColor: '#ffffff' }} />
             </div>
         );
     }
@@ -869,7 +869,7 @@ export default function CoachDashboard() {
                         {/* Lista esercizi */}
                         {loadingLibrary ? (
                             <div className="flex items-center justify-center py-16">
-                                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+                                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-700" style={{ borderTopColor: '#ffffff' }} />
                             </div>
                         ) : filteredLibrary.length === 0 ? (
                             <div className="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center">
@@ -971,7 +971,7 @@ export default function CoachDashboard() {
     if (userProfile.role === undefined) {
         return (
             <div className="flex items-center justify-center h-screen bg-background">
-                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-700" style={{ borderTopColor: '#ffffff' }} />
             </div>
         );
     }

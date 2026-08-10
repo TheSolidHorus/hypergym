@@ -130,9 +130,8 @@ export default function Certificate() {
                     <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 w-full max-w-sm overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-4 duration-300">
                         {/* Intestazione colorata */}
                         <div className="px-6 pt-6 pb-4 flex flex-col items-center text-center">
-                            <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-lg"
-                                style={{ background: 'linear-gradient(135deg, #ff6a00, #ffb000)' }}>
-                                <span className="material-symbols-outlined text-white text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
+                            <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-lg bg-card border border-border">
+                                <span className="material-symbols-outlined text-foreground text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>description</span>
                             </div>
                             <h2 className="text-xl font-black uppercase tracking-tight text-slate-900 mb-2">
                                 📄 Certificato Cartaceo

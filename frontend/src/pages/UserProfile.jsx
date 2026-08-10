@@ -129,16 +129,16 @@ export default function UserProfile() {
     };
 
     if (loading) return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col items-center justify-center p-6 text-center animate-in fade-in">
-            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
-            <p className="font-black uppercase tracking-widest text-[#ff6a00] text-xl italic hover:animate-pulse">Loading Profile...</p>
+        <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-6 text-center animate-in fade-in">
+            <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p className="font-black uppercase tracking-widest text-foreground text-sm tracking-widest">Caricamento Profilo...</p>
         </div>
     );
 
     const isMe = currentUserId === userId;
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 p-4 pb-24">
+        <div className="min-h-screen bg-background text-foreground p-4 pb-24">
             {/* Header */}
             <div className="flex items-center gap-4 mb-8 pt-4">
                 <button

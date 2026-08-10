@@ -66,32 +66,32 @@ export default function Analysis() {
             .slice(-8);
     }, [history]);
 
-    // Light theme bright colors
-    const COLORS = ['#ff6a00', '#f59e0b', '#3b82f6', '#10b981', '#8b5cf6', '#ef4444', '#64748b'];
+    // Titanium stealth theme palette
+    const COLORS = ['#ffffff', '#38bdf8', '#a78bfa', '#34d399', '#f43f5e', '#fbbf24', '#94a3b8'];
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 p-4 pb-24">
+        <div className="min-h-screen bg-background text-foreground p-4 pb-24">
             {/* Header */}
             <div className="flex items-center gap-4 mb-8 pt-4">
                 <button
                     onClick={() => navigate(-1)}
-                    className="w-10 h-10 flex items-center justify-center bg-white border border-slate-200 shadow-sm rounded-full text-slate-400 hover:text-slate-800 hover:bg-slate-50 transition-all active:scale-95"
+                    className="w-10 h-10 flex items-center justify-center bg-card border border-border shadow-sm rounded-full text-slate-400 hover:text-foreground hover:bg-slate-800 transition-all active:scale-95"
                 >
                     <span className="material-symbols-outlined text-[20px]">arrow_back</span>
                 </button>
-                <h1 className="text-3xl font-black italic uppercase tracking-tighter">Analisi Dati</h1>
+                <h1 className="text-3xl font-black uppercase tracking-tight">Analisi Dati</h1>
             </div>
 
             <div className="space-y-6">
 
                 {/* 1. Muscle Split Pie Chart */}
-                <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+                <div className="bg-card p-6 rounded-3xl border border-border shadow-sm">
                     <div className="flex items-center gap-3 mb-6">
-                        <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center border border-orange-100 shadow-inner">
-                            <span className="material-symbols-outlined text-primary text-[20px]">donut_small</span>
+                        <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center border border-border shadow-inner">
+                            <span className="material-symbols-outlined text-foreground text-[20px]">donut_small</span>
                         </div>
                         <div>
-                            <h2 className="font-black text-lg uppercase italic tracking-tighter text-slate-900 leading-tight">Focus Muscolare</h2>
+                            <h2 className="font-black text-lg uppercase tracking-tight text-foreground leading-tight">Focus Muscolare</h2>
                             <p className="text-[10px] uppercase font-bold text-slate-400 tracking-widest mt-0.5">Basato sui set totali</p>
                         </div>
                     </div>

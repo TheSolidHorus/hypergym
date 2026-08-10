@@ -339,16 +339,15 @@ export default function PlanEditor() {
                 <div className="flex gap-2">
                     <button
                         onClick={() => setShowAIModal(true)}
-                        className="text-[10px] font-black text-white px-3 py-2 rounded-xl uppercase tracking-widest transition-colors border border-purple-400 shadow-sm flex items-center gap-1"
-                        style={{ background: 'linear-gradient(135deg, #7c3aed, #ff6a00)' }}
+                        className="text-[10px] font-black text-white bg-slate-800 hover:bg-slate-700 px-3 py-2 rounded-xl uppercase tracking-widest transition-colors border border-slate-600 shadow-sm flex items-center gap-1"
                         title="Genera scheda con AI"
                     >
                         ✨ AI
                     </button>
-                    <button onClick={() => setShowCopyModal(true)} className="text-[10px] font-black text-slate-500 bg-slate-100 px-3 py-2 rounded-xl uppercase tracking-widest hover:bg-slate-200 hover:text-slate-700 transition-colors border border-slate-200 shadow-sm flex items-center gap-1">
+                    <button onClick={() => setShowCopyModal(true)} className="text-[10px] font-black text-slate-300 bg-card hover:bg-slate-800 px-3 py-2 rounded-xl uppercase tracking-widest hover:text-white transition-colors border border-border shadow-sm flex items-center gap-1">
                         <span className="material-symbols-outlined text-[14px]">inventory_2</span> Sfoglia
                     </button>
-                    <button onClick={handleSave} className="text-xs font-black bg-primary text-white px-5 py-2 rounded-xl uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-md shadow-primary/20 flex items-center gap-1">
+                    <button onClick={handleSave} className="text-xs font-black bg-white text-black px-5 py-2 rounded-xl uppercase tracking-widest hover:bg-slate-100 active:scale-[0.98] transition-all shadow-md shadow-white/10 flex items-center gap-1">
                         <span className="material-symbols-outlined text-[16px]">save</span> Salva
                     </button>
                 </div>

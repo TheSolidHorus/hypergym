@@ -25,20 +25,20 @@ class ErrorBoundary extends React.Component {
         if (this.state.hasError) {
             // Fallback UI personalizzata
             return (
-                <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50 text-slate-900 p-6 text-center animate-in fade-in">
-                    <div className="bg-white border border-red-200 p-8 rounded-3xl max-w-md w-full shadow-2xl">
-                        <div className="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground p-6 text-center animate-in fade-in">
+                    <div className="bg-card border border-border p-8 rounded-3xl max-w-md w-full shadow-2xl">
+                        <div className="w-20 h-20 bg-red-950/40 border border-red-800/40 text-red-400 rounded-full flex items-center justify-center mx-auto mb-6">
                             <span className="material-symbols-outlined text-[48px]">error</span>
                         </div>
 
-                        <h1 className="text-3xl font-black uppercase italic tracking-tighter text-slate-900 mb-3">Qualcosa è andato storto</h1>
+                        <h1 className="text-3xl font-black uppercase tracking-tight text-foreground mb-3">Qualcosa è andato storto</h1>
 
-                        <p className="text-slate-500 mb-8 text-sm font-bold">
-                            Si è verificato un errore imprevisto nell&apos;applicazione. Non preoccuparti, i tuoi dati sono al sicuro.
+                        <p className="text-slate-400 mb-8 text-sm font-medium">
+                            Si è verificato un errore imprevisto nell&apos;applicazione. I tuoi dati salvati sono al sicuro.
                         </p>
 
-                        <details className="text-left bg-slate-50 border border-slate-200 p-3 rounded-xl mb-8 overflow-auto max-h-40 text-xs text-red-500 font-mono shadow-inner">
-                            <summary className="cursor-pointer mb-2 text-slate-400 font-bold uppercase tracking-widest text-[10px] select-none hover:text-slate-600">Dettagli Errore (per sviluppatori)</summary>
+                        <details className="text-left bg-background border border-border p-3 rounded-xl mb-8 overflow-auto max-h-40 text-xs text-red-400 font-mono shadow-inner">
+                            <summary className="cursor-pointer mb-2 text-slate-400 font-bold uppercase tracking-widest text-[10px] select-none hover:text-slate-300">Dettagli Errore</summary>
                             <div className="pl-2">
                                 {this.state.error && this.state.error.toString()}
                                 <br />
@@ -48,7 +48,7 @@ class ErrorBoundary extends React.Component {
 
                         <button
                             onClick={this.handleReload}
-                            className="w-full py-4 bg-primary text-white font-black uppercase tracking-widest text-xs rounded-2xl hover:bg-orange-600 transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-[0.98]"
+                            className="w-full py-4 bg-white hover:bg-slate-100 text-black font-black uppercase tracking-widest text-xs rounded-2xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-white/10 active:scale-[0.98]"
                         >
                             <span className="material-symbols-outlined text-[18px]">refresh</span>
                             Ricarica App

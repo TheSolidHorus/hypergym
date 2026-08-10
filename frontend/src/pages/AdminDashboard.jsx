@@ -99,7 +99,7 @@ const AdminSidebar = ({ active, setActive, mobileOpen, setMobileOpen, onLogout, 
                 md:translate-x-0 md:static
             `}>
                 <div className="p-6 border-b border-slate-100 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-inner" style={{ background: 'linear-gradient(135deg, #ff6a00, #ffb000)' }}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-inner bg-slate-900 border border-slate-800">
                         <span className="material-symbols-outlined text-white text-[20px]">security</span>
                     </div>
                     <div>
@@ -789,7 +789,7 @@ export default function AdminDashboard() {
                             <div className="divide-y divide-slate-100">
                                 {clients.slice(0, 5).map(c => (
                                     <div key={c.id} className="p-4 flex items-center gap-4 hover:bg-slate-50 transition-colors">
-                                        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-inner font-black text-lg flex-shrink-0" style={{ background: 'linear-gradient(135deg,#ff6a00,#ffb000)' }}>
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center text-white shadow-inner font-black text-lg flex-shrink-0 bg-slate-800 border border-slate-700">
                                             {c.name?.[0] || '?'}
                                         </div>
                                         <div className="flex-1">
@@ -984,7 +984,7 @@ export default function AdminDashboard() {
                                                 </td>
                                                 <td className="px-6 py-4">
                                                     <div className="flex items-center gap-3">
-                                                        <div className="w-8 h-8 rounded-full flex items-center justify-center text-white shadow-inner font-black text-sm flex-shrink-0" style={{ background: 'linear-gradient(135deg,#ff6a00,#ffb000)' }}>
+                                                        <div className="w-8 h-8 rounded-full flex items-center justify-center text-white shadow-inner font-black text-sm flex-shrink-0 bg-slate-800 border border-slate-700">
                                                             {plan.client?.name?.[0] || '?'}
                                                         </div>
                                                         <div>
@@ -1046,8 +1046,7 @@ export default function AdminDashboard() {
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => setShowAIModal(true)}
-                                    className="text-white px-4 py-2.5 font-black rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md"
-                                    style={{ background: 'linear-gradient(135deg, #7c3aed, #ff6a00)' }}
+                                    className="bg-slate-900 border border-slate-700 text-white px-4 py-2.5 font-black rounded-xl text-xs uppercase tracking-wider flex items-center gap-2 hover:bg-slate-800 active:scale-[0.98] transition-all shadow-md"
                                 >
                                     ✨ Genera con AI
                                 </button>
@@ -1231,7 +1230,7 @@ export default function AdminDashboard() {
                         {/* Lista esercizi */}
                         {loadingLibrary ? (
                             <div className="flex items-center justify-center py-16">
-                                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+                                <div className="w-10 h-10 rounded-full animate-spin border-4 border-slate-700" style={{ borderTopColor: '#ffffff' }} />
                             </div>
                         ) : filteredLibrary.length === 0 ? (
                             <div className="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center">
@@ -1671,7 +1670,7 @@ export default function AdminDashboard() {
 
                             {loadingBroadcasts ? (
                                 <div className="flex items-center justify-center py-12">
-                                    <div className="w-8 h-8 rounded-full animate-spin border-4 border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+                                    <div className="w-8 h-8 rounded-full animate-spin border-4 border-slate-700" style={{ borderTopColor: '#ffffff' }} />
                                 </div>
                             ) : broadcastList.length === 0 ? (
                                 <div className="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center">
@@ -1734,7 +1733,7 @@ export default function AdminDashboard() {
     if (userProfile.role === undefined) {
         return (
             <div className="fixed inset-0 bg-background flex items-center justify-center z-50">
-                <div className="w-10 h-10 rounded-full animate-spin border-[3px] border-slate-200" style={{ borderTopColor: '#ff6a00' }} />
+                <div className="w-10 h-10 rounded-full animate-spin border-[3px] border-slate-700" style={{ borderTopColor: '#ffffff' }} />
             </div>
         );
     }

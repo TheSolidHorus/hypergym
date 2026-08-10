@@ -143,7 +143,7 @@ export default function Plans() {
                                     {coaches.map(coach => (
                                         <button key={coach.id} onClick={() => { setFormData(prev => ({ ...prev, coach_id: coach.id })); setStep(2); }}
                                             className={`w-full p-4 rounded-2xl border transition-all flex items-center gap-4 text-left shadow-sm ${formData.coach_id === coach.id ? 'border-primary bg-primary/5' : 'border-slate-100 bg-white hover:border-primary/30'}`}>
-                                            <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0 shadow-inner" style={{ background: 'linear-gradient(135deg, #ff6a00, #ffb000)' }}>
+                                            <div className="w-12 h-12 rounded-full flex items-center justify-center text-white font-black text-lg flex-shrink-0 shadow-inner bg-slate-800 border border-slate-700">
                                                 {coach.name?.[0] || '?'}
                                             </div>
                                             <div className="flex-1">

@@ -98,8 +98,7 @@ export default function AIGeneratorModal({ onClose, onPlanGenerated }) {
                 <div className="px-6 pt-10 pb-5 border-b border-slate-100 flex items-center justify-between flex-shrink-0">
                     <div className="flex items-center gap-3">
                         <div
-                            className="w-10 h-10 rounded-2xl flex items-center justify-center text-white text-lg shadow-md"
-                            style={{ background: "linear-gradient(135deg, #7c3aed, #ff6a00)" }}
+                            className="w-10 h-10 rounded-2xl flex items-center justify-center text-white text-lg shadow-md bg-slate-900 border border-slate-700"
                         >
                             ✨
                         </div>
